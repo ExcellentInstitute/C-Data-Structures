@@ -1,5 +1,5 @@
 // c-data.js
-// Excellent Institute - C Programming & Data Structures Syllabus
+// Excellent Institute - C Programming & Data Structures Syllabus (Detailed Edition)
 
 const cBookData = [
     {
@@ -7,22 +7,28 @@ const cBookData = [
         title: "Chapter 1: Introduction to C Language",
         topics: [
             {
-                heading: "What is C?",
-                text: "Imagine you want to talk to someone from Japan, but you only know Hindi. You need a translator! The computer only speaks in '0s and 1s' (Binary). 'C' is a language that humans can easily write, which a translator turns into 0s and 1s for the computer.",
-                codeSnippet: "Computers only understand Machine Code (010011).",
+                heading: "The Mother of All Languages",
+                text: "C was created in 1972 by a man named Dennis Ritchie. It is often called the 'Mother of all languages' because almost every modern language (like C++, Java, and Python) copied its style. Even the Windows operating system and Android are mostly written in C!",
+                codeSnippet: "If you learn C, learning any other language becomes very easy.",
                 imgSrc: "images/c-01-intro.jpg"
             },
             {
                 heading: "The Compiler (Your Translator)",
-                text: "When you write a story in C, the computer cannot read it instantly. You use a special software called a 'Compiler'. The compiler reads your English-like C code, checks it for spelling mistakes, and translates it perfectly so the computer can run it.",
-                codeSnippet: "Source Code -> Compiler -> Machine Code",
+                text: "Computers only understand 'Machine Code'—a massive list of 0s and 1s. You cannot write in 0s and 1s! So, you write C code (which uses English words), and a special software called a 'Compiler' reads it, checks it for grammar mistakes, and translates it perfectly into Machine Code for the computer to run.",
+                codeSnippet: "Human writes C Code -> Compiler translates it -> Computer runs 010011",
                 imgSrc: "images/c-02-compiler.jpg"
             },
             {
-                heading: "Your First Program (Hello World)",
-                text: "Every programmer's first step is making the computer say 'Hello'. We use a special word called 'printf' which tells the screen to print whatever words we put inside the brackets.",
-                codeSnippet: "printf(\"Hello, Excellent Institute!\");",
-                imgSrc: "images/c-03-hello.jpg"
+                heading: "Syntax (The Grammar of Code)",
+                text: "In English, a sentence must end with a full stop (.). In C, almost every command must end with a semicolon (;). This is called 'Syntax'. If you forget a semicolon, the Compiler gets confused and gives you a 'Syntax Error', refusing to run the program.",
+                codeSnippet: "printf(\"I remember my semicolon!\");",
+                imgSrc: "images/c-03-syntax.jpg"
+            },
+            {
+                heading: "Breaking Down 'Hello World'",
+                text: "Every C program starts with a main door called 'int main()'. Whatever you put inside its curly brackets {} is what runs. We also write '#include <stdio.h>' at the very top. Think of this as borrowing a dictionary from the library so the computer knows what words like 'printf' mean.",
+                codeSnippet: "#include <stdio.h>\nint main() {\n  printf(\"Hello, World!\");\n  return 0;\n}",
+                imgSrc: "images/c-04-hello.jpg"
             }
         ]
     },
@@ -32,21 +38,27 @@ const cBookData = [
         topics: [
             {
                 heading: "Variables (Storage Boxes)",
-                text: "Think of a 'Variable' as a cardboard box where you can store things. If you want to remember a student's age, you create a box, stick a label on it named 'age', and put the number 14 inside it.",
-                codeSnippet: "int age = 14;",
-                imgSrc: "images/c-04-variables.jpg"
+                text: "A 'Variable' is a labeled box in the computer's memory where you save data. But there are rules for the labels: a variable name cannot have spaces (use 'student_age', not 'student age'), it cannot start with a number, and it is case-sensitive ('Age' and 'age' are two different boxes).",
+                codeSnippet: "int student_age = 15; // Creates a box named student_age and puts 15 inside.",
+                imgSrc: "images/c-05-variables.jpg"
             },
             {
                 heading: "Data Types (Different Sized Boxes)",
-                text: "You wouldn't put an elephant in a matchbox! In C, you must tell the computer what type of box you need. 'int' is a box for whole numbers (like 5). 'float' is a box for decimals (like 5.5). 'char' is a small box for a single letter (like 'A').",
-                codeSnippet: "float marks = 85.5; \\\\ A box for decimals",
-                imgSrc: "images/c-05-datatypes.jpg"
+                text: "You must tell the computer what type of data you are storing so it knows how big of a box to build. 'int' is for whole numbers (like 10). 'float' is for decimals (like 99.5). 'char' is for a single letter wrapped in single quotes (like 'A').",
+                codeSnippet: "int age = 15;\nfloat weight = 50.5;\nchar grade = 'A';",
+                imgSrc: "images/c-06-datatypes.jpg"
             },
             {
-                heading: "Operators (The Math Symbols)",
-                text: "Operators are just symbols that do math or compare things. You use '+' to add, '-' to subtract, '*' to multiply, and '/' to divide. You can also use '>' to ask the computer if one box is bigger than another.",
-                codeSnippet: "int total = 10 + 5; \\\\ total box now holds 15",
-                imgSrc: "images/c-06-operators.jpg"
+                heading: "Format Specifiers (Printing the Boxes)",
+                text: "When you want to print what is inside a box to the screen, you use a secret code called a Format Specifier. Use '%d' to print an int, '%f' to print a float, and '%c' to print a char. The computer sees the secret code and replaces it with the variable's value.",
+                codeSnippet: "printf(\"I am %d years old, and my grade is %c\", age, grade);",
+                imgSrc: "images/c-07-format.jpg"
+            },
+            {
+                heading: "Math and Logic Operators",
+                text: "Operators do the math. You know +, -, *, and / (divide). But C has a special one: the Modulo '%'. It gives you the REMAINDER of a division (10 % 3 = 1). We also have Logic Operators: '&&' means AND (both must be true), and '||' means OR (only one needs to be true).",
+                codeSnippet: "if (age > 10 && grade == 'A') { ... } // Checks two things at once",
+                imgSrc: "images/c-08-operators.jpg"
             }
         ]
     },
@@ -55,22 +67,28 @@ const cBookData = [
         title: "Chapter 3: Conditional Statements and Loops",
         topics: [
             {
-                heading: "If-Else (Making Decisions)",
-                text: "Computers are smart because they can make choices. The 'If-Else' statement is like a crossroad. You tell the computer: 'IF the marks are greater than 30, print Pass. ELSE (otherwise), print Fail.'",
-                codeSnippet: "if (marks > 30) { printf(\"Pass\"); } else { printf(\"Fail\"); }",
-                imgSrc: "images/c-07-ifelse.jpg"
+                heading: "If, Else If, Else (Making Choices)",
+                text: "The computer can make decisions based on rules. 'If' is the first check. 'Else If' is a backup check. 'Else' is the final action if everything else fails. It's like saying: IF I have ₹100, buy Pizza. ELSE IF I have ₹50, buy a Burger. ELSE, just drink water.",
+                codeSnippet: "if (marks >= 80) { printf(\"A\"); }\nelse if (marks >= 60) { printf(\"B\"); }\nelse { printf(\"Fail\"); }",
+                imgSrc: "images/c-09-ifelse.jpg"
             },
             {
-                heading: "Loops (The Magic Repeater)",
-                text: "If your teacher tells you to write 'I will not talk in class' 100 times, your hand will hurt. But a computer doesn't get tired! A 'Loop' tells the computer to repeat the same block of code over and over until it finishes counting.",
-                codeSnippet: "for(int i=1; i<=100; i++) { printf(\"I will not talk\"); }",
-                imgSrc: "images/c-08-loops.jpg"
+                heading: "Switch Case (The Restaurant Menu)",
+                text: "If you have 10 different options, writing 10 'Else If' lines gets very messy. A 'Switch' statement acts like a restaurant menu. You give it a choice (like Day 1, Day 2), and it jumps directly to that specific 'Case'. You must put a 'break;' at the end of a case so it stops there.",
+                codeSnippet: "switch(day) {\n  case 1: printf(\"Monday\"); break;\n  case 2: printf(\"Tuesday\"); break;\n}",
+                imgSrc: "images/c-10-switch.jpg"
             },
             {
-                heading: "While Loops (Wait until told to stop)",
-                text: "A 'For' loop stops when it reaches an exact number. A 'While' loop is like waiting for the bus. It tells the computer: 'Keep waiting WHILE the bus has not arrived.' It repeats the action until a specific rule is broken.",
-                codeSnippet: "while(bus == NOT_HERE) { printf(\"Still waiting...\"); }",
-                imgSrc: "images/c-09-while.jpg"
+                heading: "For Loops (The Counting Machine)",
+                text: "A Loop repeats code. A 'For' loop is best when you know exactly how many times you want to repeat. It has 3 parts: Start counting (int i=1), Stop condition (i<=10), and Step size (i++ means add 1 each time).",
+                codeSnippet: "for (int i = 1; i <= 5; i++) {\n  printf(\"Hello %d\", i);\n} // Prints Hello 5 times",
+                imgSrc: "images/c-11-forloop.jpg"
+            },
+            {
+                heading: "While and Do-While Loops",
+                text: "A 'While' loop repeats code as long as a rule is true, without a set counting number (like 'Keep playing while health > 0'). A 'Do-While' loop is unique: it runs the code ONCE first, and THEN checks the rule. It’s like tasting food before deciding if you like it.",
+                codeSnippet: "int hp = 100;\nwhile (hp > 0) {\n  printf(\"Keep fighting!\");\n}",
+                imgSrc: "images/c-12-while.jpg"
             }
         ]
     },
@@ -79,16 +97,28 @@ const cBookData = [
         title: "Chapter 4: Functions and Arrays",
         topics: [
             {
-                heading: "Functions (Mini Factories)",
-                text: "If you have to make 10 cups of tea, you don't read the recipe 10 times. You memorize the recipe once, and just use it. A 'Function' is a block of code you write once, give a name (like 'MakeTea'), and then you can ask the computer to run it anytime you want without retyping the code.",
-                codeSnippet: "void MakeTea() { printf(\"Boil water, add tea leaves.\"); }",
-                imgSrc: "images/c-10-functions.jpg"
+                heading: "Functions (Mini Code Factories)",
+                text: "A Function is a block of code you write once and reuse. Think of it like a juice machine. You give it ingredients (called Parameters), the machine processes them, and it gives you back the juice (called a Return Value). The main code just calls the machine by its name when needed.",
+                codeSnippet: "int AddNumbers(int a, int b) {\n  return a + b;\n}\n// In main: int sum = AddNumbers(5, 10);",
+                imgSrc: "images/c-13-functions.jpg"
             },
             {
-                heading: "Arrays (A Train of Boxes)",
-                text: "If you want to store the marks of 50 students, creating 50 separate variables (box1, box2, box3) is exhausting. An 'Array' is like a train with 50 connected compartments. You give the train one name, and each compartment holds a different student's mark.",
-                codeSnippet: "int marks[50]; \\\\ A train with 50 empty boxes for numbers",
-                imgSrc: "images/c-11-arrays.jpg"
+                heading: "Arrays (A Train of Data)",
+                text: "If you need to store marks for 50 students, creating 50 variables is a nightmare. An Array is one single variable shaped like a train with 50 compartments. The most important rule in C: Arrays always start counting at 0! So the first compartment is [0], and the 50th is [49].",
+                codeSnippet: "int marks[5] = {90, 85, 78, 92, 88};\nprintf(\"%d\", marks[0]); // Prints 90",
+                imgSrc: "images/c-14-arrays.jpg"
+            },
+            {
+                heading: "2D Arrays (Matrices / Grids)",
+                text: "A normal Array is a straight line. A 2D Array is a grid, like the seating chart in a movie theater with Rows and Columns. You need two numbers to find a seat: Row 2, Column 3. They are perfect for making board games like Tic-Tac-Toe or Chess.",
+                codeSnippet: "int theater[3][4]; // Creates a grid with 3 Rows and 4 Columns",
+                imgSrc: "images/c-15-2darray.jpg"
+            },
+            {
+                heading: "Strings (Word Arrays)",
+                text: "C doesn't have a built-in 'String' box for full words. Instead, C treats a word as an Array of Characters. The word 'HELLO' is actually an array of 5 letters. C secretly adds a 6th invisible character called the Null Terminator ('\\0') to know where the word stops.",
+                codeSnippet: "char name[6] = \"HELLO\"; // H-E-L-L-O-\\0",
+                imgSrc: "images/c-16-strings.jpg"
             }
         ]
     },
@@ -97,16 +127,22 @@ const cBookData = [
         title: "Chapter 5: Pointers and Structures",
         topics: [
             {
-                heading: "Pointers (The Treasure Map)",
-                text: "This is C's most famous trick! A normal variable stores a number. But a 'Pointer' is a sticky note that stores a LOCATION. It tells the computer exactly which street and house number (Memory Address) to go to in order to find the data.",
-                codeSnippet: "int *ptr = &age; \\\\ ptr now holds the secret map to the 'age' box",
-                imgSrc: "images/c-12-pointers.jpg"
+                heading: "Memory Addresses (&)",
+                text: "Every time you create a variable, the computer saves it in a tiny locker in its RAM. Every locker has a unique house number, like 0x7FFA. If you put an ampersand (&) in front of a variable, it tells you the exact house number where the data is living.",
+                codeSnippet: "int age = 15;\nprintf(\"Age is stored at memory address: %p\", &age);",
+                imgSrc: "images/c-17-address.jpg"
             },
             {
-                heading: "Structures (Custom Backpacks)",
-                text: "An Array only holds ONE type of thing (like a box of only apples). But what if you want to store a student's Name (letters), Roll Number (whole number), and Percentage (decimals) together? A 'Structure' lets you build a custom backpack that can hold all these different things in one place.",
-                codeSnippet: "struct Student { char name[20]; int roll; float marks; };",
-                imgSrc: "images/c-13-structs.jpg"
+                heading: "Pointers (The Treasure Map)",
+                text: "A Pointer is a special variable that does not hold a normal number. It holds a Memory Address! It acts like a treasure map pointing to where another variable lives. If you put a star (*) in front of the pointer, it 'opens the locker' and gets the actual value inside.",
+                codeSnippet: "int age = 15;\nint *ptr = &age;  // ptr now holds the map to 'age'\nprintf(\"%d\", *ptr); // * opens the map and prints 15",
+                imgSrc: "images/c-18-pointers.jpg"
+            },
+            {
+                heading: "Structures (Custom Data Backpacks)",
+                text: "An Array can only hold one type of thing (like 10 int numbers). But a student has a Name (chars), Roll No (int), and Percentage (float). A 'struct' lets you design a custom backpack to hold different data types together. You use a dot (.) to open the backpack and get specific items.",
+                codeSnippet: "struct Student { char name[20]; int roll; };\nstruct Student s1;\ns1.roll = 45;",
+                imgSrc: "images/c-19-structures.jpg"
             }
         ]
     },
@@ -115,16 +151,22 @@ const cBookData = [
         title: "Chapter 6: Introduction to Data Structures",
         topics: [
             {
-                heading: "What is a Data Structure?",
-                text: "Imagine your bedroom. If you throw all your clothes, books, and toys on the floor, it takes forever to find your socks. If you use a wardrobe with drawers, finding socks takes one second! A 'Data Structure' is just a way of neatly organizing data inside the computer so it can be found super fast.",
-                codeSnippet: "Good Organization = Very Fast Software",
-                imgSrc: "images/c-14-datastructures.jpg"
+                heading: "Why Organize Data?",
+                text: "Imagine looking for a specific book in a library where a million books are dumped in a pile on the floor. It would take weeks! A Data Structure is like the library shelves—a highly specific way to organize data inside the computer's memory so it can be searched, sorted, and retrieved with lightning speed.",
+                codeSnippet: "Good Data Structure = Fast Software.\nBad Data Structure = Lagging Software.",
+                imgSrc: "images/c-20-ds-intro.jpg"
             },
             {
-                heading: "Why do we need them?",
-                text: "When you search for a video on YouTube, it searches through billions of videos in less than a second. It doesn't check them one by one. It uses advanced Data Structures to magically skip to the exact right video.",
-                codeSnippet: "Speed and Efficiency are the goals of Data Structures.",
-                imgSrc: "images/c-15-why-ds.jpg"
+                heading: "Static vs. Dynamic Memory",
+                text: "An Array is 'Static'. If you build an array of 10 boxes, you cannot add an 11th box later. It is rigid. 'Dynamic' Memory uses special C functions like malloc() to ask the computer to build new boxes while the program is running, giving you flexible memory that grows and shrinks as needed.",
+                codeSnippet: "malloc(size); // Asks the computer to give you flexible memory space",
+                imgSrc: "images/c-21-dynamic.jpg"
+            },
+            {
+                heading: "Time Complexity (Big O Notation)",
+                text: "Programmers don't measure speed in seconds because some computers are faster than others. They measure speed in 'Steps' using Big O notation. O(1) means the task takes 1 step (instant). O(N) means if there are 100 items, it takes 100 steps to check them all.",
+                codeSnippet: "O(1) is incredible speed. O(N) is normal speed.",
+                imgSrc: "images/c-22-bigo.jpg"
             }
         ]
     },
@@ -133,16 +175,22 @@ const cBookData = [
         title: "Chapter 7: Stack and Queue",
         topics: [
             {
-                heading: "The Stack (Plates in a Cafeteria)",
-                text: "A Stack works exactly like a tall stack of plates. If you add a new plate, you put it on TOP. If you take a plate off, you must take the one from the TOP. The rule is called LIFO (Last In, First Out). The last plate added is the first one removed.",
-                codeSnippet: "Push (Add to top) \\\\ Pop (Remove from top)",
-                imgSrc: "images/c-16-stack.jpg"
+                heading: "The Stack (LIFO Principle)",
+                text: "A Stack works exactly like a stack of plates in a cafeteria. If you add a plate, it goes on TOP. If you take a plate, you take from the TOP. This is called Last In, First Out (LIFO). The 'Undo' button (Ctrl+Z) in MS Word uses a Stack to remember your last action!",
+                codeSnippet: "Push = Add to top of stack.\nPop = Remove from top of stack.",
+                imgSrc: "images/c-23-stack.jpg"
             },
             {
-                heading: "The Queue (Line at the Cinema)",
-                text: "A Queue works exactly like a line of people waiting to buy movie tickets. The person who gets in line FIRST gets their ticket FIRST. The person who joins LAST goes to the BACK. The rule is called FIFO (First In, First Out).",
-                codeSnippet: "Enqueue (Join the back) \\\\ Dequeue (Leave the front)",
-                imgSrc: "images/c-17-queue.jpg"
+                heading: "The Queue (FIFO Principle)",
+                text: "A Queue works exactly like a line of people buying movie tickets. The person who gets in line FIRST gets their ticket FIRST. The person who joins LAST goes to the BACK. This is First In, First Out (FIFO). Network printers use Queues to print documents in the order they were received.",
+                codeSnippet: "Enqueue = Join the back of the line.\nDequeue = Leave the front of the line.",
+                imgSrc: "images/c-24-queue.jpg"
+            },
+            {
+                heading: "Circular Queues",
+                text: "In a normal Array Queue, once people leave the front, those boxes stay empty and wasted. A Circular Queue connects the very last box back to the very first box, like a ring of musical chairs. This saves memory and is highly efficient for repeating tasks.",
+                codeSnippet: "Last Box -> loops back to -> First Box",
+                imgSrc: "images/c-25-circular.jpg"
             }
         ]
     },
@@ -151,16 +199,28 @@ const cBookData = [
         title: "Chapter 8: Linked Lists and Trees",
         topics: [
             {
-                heading: "Linked Lists (The Treasure Hunt)",
-                text: "In an Array, all the boxes sit right next to each other. In a Linked List, the boxes are scattered all over the computer! To connect them, each box holds its data AND a secret 'Pointer' map showing exactly where the next box is hiding.",
-                codeSnippet: "[Data | Map] -> [Data | Map] -> [Data | NULL]",
-                imgSrc: "images/c-18-linkedlist.jpg"
+                heading: "Singly Linked Lists (The Paper Chain)",
+                text: "In an Array, memory boxes are stuck together in a row. In a Linked List, the boxes are scattered all over the computer. To connect them, each box (called a Node) holds its Data, plus a Pointer (a map) leading to the next box. You can easily unhook a chain to insert new data in the middle!",
+                codeSnippet: "[Data | Pointer] -> [Data | Pointer] -> [Data | NULL]",
+                imgSrc: "images/c-26-singly.jpg"
             },
             {
-                heading: "Trees (The Family Chart)",
-                text: "Sometimes data is not a straight line. Think of a family tree: A grandfather at the top, who connects to two parents, who connect to four children. A 'Tree' data structure organizes data in these branching layers, making it incredibly fast to search through huge amounts of information.",
-                codeSnippet: "Root (Top) -> Branches -> Leaves (Bottom)",
-                imgSrc: "images/c-19-trees.jpg"
+                heading: "Doubly Linked Lists",
+                text: "A Singly Linked List is like a one-way street; you can only read data going forward. A Doubly Linked List gives each box TWO pointers: one pointing to the next box, and one pointing to the previous box. This lets you read the data backward, which is how the 'Next Page / Previous Page' buttons work on a web browser.",
+                codeSnippet: "[Prev | Data | Next] <-> [Prev | Data | Next]",
+                imgSrc: "images/c-27-doubly.jpg"
+            },
+            {
+                heading: "Trees & Hierarchies",
+                text: "Sometimes data naturally branches out. Think of the files on your computer: Your C: Drive (the Root) opens into Folders (Branches), which open into Files (Leaves). A Tree data structure organizes data in these branching layers instead of a flat line.",
+                codeSnippet: "Root Node -> Branch Nodes -> Leaf Nodes",
+                imgSrc: "images/c-28-trees.jpg"
+            },
+            {
+                heading: "Binary Search Trees (The Guessing Game)",
+                text: "A Binary Search Tree (BST) is a smart tree where smaller numbers always go to the left branch, and bigger numbers go to the right branch. If you are searching for the number 50 among a million items, the tree ignores half the data at every step. It finds the answer almost instantly!",
+                codeSnippet: "Left Child < Parent < Right Child",
+                imgSrc: "images/c-29-bst.jpg"
             }
         ]
     }
